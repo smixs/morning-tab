@@ -57,7 +57,7 @@ async function pool<T>(xs: T[], n: number, f: (x: T) => Promise<void>): Promise<
   await Promise.all(Array.from({ length: n }, async () => { while (i < xs.length) { const x = xs[i++]; if (x !== undefined) await f(x); } }));
 }
 
-// RSS/Atom: подходит для блогов, СМИ, Reddit (/r/x/top/.rss), arXiv (rss.arxiv.org/rss/cs.AI), Google News RSS, hnrss.
+// RSS/Atom: подходит для блогов, СМИ, arXiv (rss.arxiv.org/rss/cs.AI), Google News RSS, hnrss.
 function parseFeed(xml: string, src: Source): Item[] {
   const blocks = xml.match(/<item[\s>][\s\S]*?<\/item>/gi) ?? xml.match(/<entry[\s>][\s\S]*?<\/entry>/gi) ?? [];
   return blocks.map((b): Item => {

@@ -45,13 +45,12 @@
 |---|---|---|
 | Google News | `https://news.google.com/rss/search?q=<запрос>+when:1d&hl=<язык>&gl=<страна>&ceid=<страна>:<язык>` | всегда, 1–3 запроса; работает для любой темы и языка, поэтому страница не останется пустой |
 | Сайт или блог | RSS/Atom сайта: `/feed`, `/rss`, `/feed.xml`, `/atom.xml` или `<link rel="alternate" type="application/rss+xml">` в HTML | первоисточники темы, с `boost` |
-| Reddit | `https://www.reddit.com/r/<sub>/top/.rss?t=day` | сообщества темы; с серверов часто 403/429 |
 | Hacker News | `https://hnrss.org/newest?q=<слова>&points=20`, `"type": "hn"` | технические темы |
 | arXiv | `https://rss.arxiv.org/rss/<категория>` | научные темы |
 | YouTube | `https://www.youtube.com/feeds/videos.xml?channel_id=<id>` | каналы темы |
 | GitHub Trending | `https://github.com/trending?since=daily`, `"type": "github-trending"` | темы про код |
 
-X (Twitter) и платный поиск требуют платного API: предлагать только с ценой и после явного согласия пользователя. Telegram-каналы без RSS-моста не подключаются; мост берётся только по ссылке пользователя.
+Reddit отвечает 403/429 на запросы с серверов и только тратит запуски: сабреддит пользователя заменить запросом Google News по той же теме. X (Twitter) и платный поиск требуют платного API: предлагать только с ценой и после явного согласия пользователя. Telegram-каналы без RSS-моста не подключаются; мост берётся только по ссылке пользователя.
 
 ## 5. Проверка источников
 
