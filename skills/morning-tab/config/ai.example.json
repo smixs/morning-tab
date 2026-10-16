@@ -1,0 +1,26 @@
+{
+  "_doc": "Пример: ИИ. type: rss (по умолчанию; RSS/Atom, Reddit .rss, arXiv), hn (hnrss.org с очками), github-trending. boost — вес источника при выборе главной.",
+  "title": "Утренняя вкладка",
+  "tagline": "«Все новости, которые стоит прочесть»",
+  "topline": "ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ ЗА СУТКИ",
+  "lang": "ru", "locale": "ru-RU", "timezone": "Europe/Moscow",
+  "city": { "name": "Москва", "lat": 55.75, "lon": 37.62 },
+  "keywords": ["AI", "LLM", "GPT", "Claude", "Gemini", "OpenAI", "Anthropic", "agent", "model", "inference", "MCP"],
+  "windowHours": 24,
+  "sections": [
+    { "id": "labs", "title": "Лаборатории" }, { "id": "news", "title": "Новости" }, { "id": "blogs", "title": "Блоги" },
+    { "id": "hn", "title": "Hacker News" }, { "id": "papers", "title": "Статьи arXiv" }, { "id": "reddit", "title": "Reddit" },
+    { "id": "github", "title": "GitHub Trending" }
+  ],
+  "sources": [
+    { "name": "Hacker News", "url": "https://hnrss.org/frontpage?points=100", "type": "hn", "section": "hn", "limit": 12 },
+    { "name": "OpenAI", "url": "https://openai.com/news/rss.xml", "section": "labs", "limit": 4, "windowHours": 72, "boost": 100 },
+    { "name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "section": "labs", "limit": 4, "windowHours": 72, "boost": 100 },
+    { "name": "Hugging Face", "url": "https://huggingface.co/blog/feed.xml", "section": "news", "limit": 5, "windowHours": 48 },
+    { "name": "The Decoder", "url": "https://the-decoder.com/feed/", "section": "news", "limit": 6 },
+    { "name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "section": "blogs", "limit": 6 },
+    { "name": "arXiv cs.AI", "url": "https://rss.arxiv.org/rss/cs.AI", "section": "papers", "limit": 5, "windowHours": 48 },
+    { "name": "r/LocalLLaMA", "url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day", "section": "reddit", "limit": 5 },
+    { "name": "GitHub Trending", "url": "https://github.com/trending?since=daily", "type": "github-trending", "section": "github", "limit": 8 }
+  ]
+}
